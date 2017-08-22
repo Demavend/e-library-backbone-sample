@@ -1,0 +1,19 @@
+{
+  "name": "e-library-backbone-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Demavend/e-library-backbone-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Demavend/e-library-backbone-sample/issues"
+  },
+  "homepage": "https://github.com/Demavend/e-library-backbone-sample#readme"
+}
