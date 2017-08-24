@@ -1,0 +1,30 @@
+.col-md-2 {
+    text-align: center;
+}
+
+.col-md-8 {
+    height: 250px;
+    overflow: auto;
+}
+
+.openModal {
+    margin-top: 90px;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.pagination {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+#bookName {
+    width: 120px;
+}
+
+.panel-group {
+    padding: 20px;
+}
