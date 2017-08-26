@@ -25,7 +25,11 @@ App.Templates.Modal = `<div class='modal-content'>
   </div></div><div class='modal-footer'>
   <button class='btn btn-danger' data-dismiss='modal'>Закрыть</button></div>
   </div>`;
-  App.Templates.Head = `<h1 class='text-center'><%=title%></h1>`;
+App.Templates.Pagination = `<button id="prev" class="btn btn-default disabled" href="#">Prev</button>
+<button data-id="more" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Show more</button>
+<button data-id="next" class="btn btn-default" href="#">Next</button>`;
+
+  /*App.Templates.Head = `<h1 class='text-center'><%=title%></h1>`;
   App.Templates.Img = `<img src='<%=img%>' width='100%'  class='img-responsive'></img>`;
   App.Templates.Description = `<h4 class='text-justify'><%=description%></h4>`;
-  App.Templates.Button = `<button class='btn btn-info openModal'>Show<br>summary</button>`;
+  App.Templates.Button = `<button class='btn btn-info openModal'>Show<br>summary</button>`;*/
