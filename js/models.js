@@ -7,6 +7,6 @@ App.Models.Book = Backbone.Model.extend({
         date: 'It was a long time ago in a galaxy far far away...',
         description: 'If you read this we will have to kill you. Enjoy!',
         img: 'i/Cover.gif',
-        id: '1'
+        dataId: '0'
     }
 });

@@ -12,18 +12,23 @@ App.Views.Search = Backbone.View.extend({
         'click #clean': 'cleanAll'
     },
     showBooks: () => {
+        counter = 0;
+        $('.panel-group').remove();
         for (let i = 0; i < 10; i++) {
             let book = new App.Models.Book({
-                id: i
+                dataId: counter
             });
             library.add(book);
+            counter++;
         }
         let bookshelf = new App.Views.Bookshelf({
             collection: library
         });
-        $('body').append(bookshelf.render().el);
+        $('#underscore').before(bookshelf.render().el);
     },
     cleanAll: () => {
+        counter = 0;
+        library.reset()
         $('.panel-group').remove();
     }
 });
@@ -41,11 +46,9 @@ App.Views.Container = Backbone.View.extend({
 });
 App.Views.Modal = Backbone.View.extend({
     tagName: 'div',
-    id: 'modal',
-    className: 'modal fade',
+    className: 'modal-dialog',
     template: _.template(App.Templates.Modal),
     initialize: function(summary) {
-
         this.render(summary);
     },
     render: function() {
@@ -58,7 +61,7 @@ App.Views.Bookshelf = Backbone.View.extend({
     className: 'panel-group',
     initialize: function() {},
     render: function() {
-        this.collection.forEach((book, i) => {
+        this.collection.forEach((book) => {
             let view = new App.Views.Container({
                 model: book
             });
@@ -67,15 +70,14 @@ App.Views.Bookshelf = Backbone.View.extend({
         return this;
     },
     events: {
-        'click .openModal': 'showModal',
+        'click .openModal': 'showModal'
     },
     showModal: (e) => {
         let num = e.target.getAttribute('data-id');
-        console.log(library.models[num]);
         let modal = new App.Views.Modal({
             model: library.models[num]
         });
-        $('body').append(modal.render().el);
+        $('#modal').html(modal.render().el);
         $('#modal').modal();
     }
 });
