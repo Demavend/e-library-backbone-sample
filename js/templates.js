@@ -2,7 +2,8 @@ window.App = {
     Models: {},
     Views: {},
     Collections: {},
-    Templates: {}
+    Templates: {},
+    Router:{}
 };
 App.Templates.Book = `<div class='panel-heading'><h1 class='text-center'><%=title%>` +
     `</h1></div><div class='panel-body'><div class='col-md-2'><img src='<%=img%>` +

@@ -12,9 +12,8 @@ App.Views.Search = Backbone.View.extend({
         'click #clean': 'cleanAll'
     },
     showBooks: () => {
-        counter = 0;
+        location.href = '#page/1';
         $('.panel-group').remove();
-        addBooks();
         if ($('div.btn-group').length < 1) {
             let pagination = new App.Views.Pagination;
             $('div.pagination').append(pagination.render().el);
@@ -25,6 +24,7 @@ App.Views.Search = Backbone.View.extend({
         library.reset()
         $('.panel-group').remove();
         $('.btn-group').remove();
+        location.href = '';
     }
 });
 App.Views.Container = Backbone.View.extend({
@@ -88,18 +88,20 @@ App.Views.Pagination = Backbone.View.extend({
     },
     pagination: function(e) {
         const button = document.querySelector('button.disabled');
+        let more = page + 1;
+        let less = page - 1;
         if (e.target.getAttribute('data-id') === 'more') {
-            addBooks();
+            location.href = `#page/${more}`;
         } else if (e.target.getAttribute('data-id') === 'next') {
             $('.panel-group').remove();
             if (button) button.setAttribute('class', 'btn btn-default');
-            addBooks();
+            location.href = `#page/${more}`;
         } else {
-            if (counter === 20) {
+            if (counter === (STEP*2)) {
                 $('#prev').addClass('disabled');
             }
             $('.panel-group').remove();
-            remBooks();
+            location.href = `#page/${less}`;
         }
     }
 });
